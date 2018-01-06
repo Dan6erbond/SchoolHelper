@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SchoolHelper</string>
+    <string name="ressources">Ressourcen</string>
+    <string name="available_zusammenfassungen">Verfügbare Zusammenfassungen:</string>
+    <string name="back">Zurück</string>
+    <string name="zusammenfassungen">Zusammenfassungen</string>
+    <string name="home">Hauptbildschirm</string>
+    <string name="open">Öffnen</string>
+    <string name="close">Schliessen</string>
+    <string name="no_internet">Keine Internet-Verbindung gefunden! Schalte WLAN oder Mobile Daten ein.</string>
+    <string name="french">Französisch</string>
+    <string name="adjectives">Adjektive</string>
+    <string name="verbes">Verben</string>
+    <string name="times">Zeiten</string>
+    <string name="about">Über</string>
+</resources>

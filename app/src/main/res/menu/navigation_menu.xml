@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/nav_zusammenfassungen"
+        android:title="@string/zusammenfassungen" />
+
+    <item
+        android:id="@+id/nav_about"
+        android:title="@string/about" />
+
+    <item android:title="@string/french">
+        <menu>
+            <item
+                android:id="@+id/nav_french_times"
+                android:title="@string/times" />
+            <item
+                android:id="@+id/nav_french_verbes"
+                android:title="@string/verbes" />
+            <item
+                android:id="@+id/nav_french_adjectives"
+                android:title="@string/adjectives" />
+        </menu>
+    </item>
+
+</menu>

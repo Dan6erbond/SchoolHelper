@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "736265318848",
+    "firebase_url": "https://schoolhelper-16dff.firebaseio.com",
+    "project_id": "schoolhelper-16dff",
+    "storage_bucket": "schoolhelper-16dff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736265318848:android:1791d1c251ffe029",
+        "android_client_info": {
+          "package_name": "com.dan6erbond.schoolhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736265318848-3q82pe459352fim6slq98qscd0m0lmic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo2BGlYE8NPC4Zr6wNFzwPO32A6TDcpBY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SchoolHelper</string>
+    <string name="zusammenfassungen">Summarys</string>
+    <string name="available_zusammenfassungen">Available Summarys:</string>
+    <string name="back">Back</string>
+    <string name="ressources">Ressources</string>
+    <string name="home">Home</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="no_internet">No internet connection found! Try turning on Wi-Fi or mobile data.</string>
+    <string name="french">French</string>
+    <string name="adjectives">Adjectives</string>
+    <string name="verbes">Verbes</string>
+    <string name="times">Times</string>
+    <string name="about">About</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
