@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+    <string-array name="french_time_topics">
+        <item>Plus-que-Parfait</item>
+        <item>Passé composé</item>
+        <item>Imparfait</item>
+        <item>Présent</item>
+        <item>Futur composé</item>
+    </string-array>
+</resources>

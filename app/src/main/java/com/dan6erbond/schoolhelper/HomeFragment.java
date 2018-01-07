@@ -15,12 +15,32 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final Button button = view.findViewById(R.id.zusammenfassung_button);
-        button.setOnClickListener(
+        final Button zusammenfassungenButton = view.findViewById(R.id.home_zusammenfassungen);
+        zusammenfassungenButton.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
                         ((MainActivity)getActivity()).changeFragment(new ZusammenfassungenFragment());
+                    }
+                }
+        );
+
+        final Button aboutButton = view.findViewById(R.id.home_about);
+        aboutButton.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        ((MainActivity)getActivity()).changeFragment(new AboutFragment());
+                    }
+                }
+        );
+
+        final Button frenchButton = view.findViewById(R.id.home_french);
+        frenchButton.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        ((MainActivity)getActivity()).changeFragment(new FrenchFragment());
                     }
                 }
         );

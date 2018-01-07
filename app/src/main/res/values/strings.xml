@@ -13,6 +13,10 @@
     <string name="verbes">Verbes</string>
     <string name="times">Times</string>
     <string name="about">About</string>
+    <string name="french_topics">Topics:</string>
+    <string name="about_text">This app was developed by RaviAnand Mohabir (Dan6erbond) as practice for native Android Development and is intended for personal use.</string>
+    <string name="website">Website</string>
+    <string name="french_times">French Times</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

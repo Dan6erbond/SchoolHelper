@@ -8,7 +8,7 @@
         android:id="@+id/ressources"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/zusammenfassung_button"
+        android:layout_above="@+id/home_zusammenfassungen"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="78dp"
         android:text="@string/ressources"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/zusammenfassung_button"
+        android:id="@+id/home_zusammenfassungen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -28,9 +28,34 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorAccent"
-        android:textColor="#FFFFFF"
-        android:paddingRight="15dp"
-        android:paddingLeft="15dp"/>
+        style="@style/StandardButton"/>
+
+    <Button
+        android:id="@+id/home_about"
+        style="@style/StandardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_zusammenfassungen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="@string/about"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/home_french"
+        style="@style/StandardButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_about"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="@string/french"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </RelativeLayout>

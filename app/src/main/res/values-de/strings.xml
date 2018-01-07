@@ -12,6 +12,10 @@
     <string name="french">Französisch</string>
     <string name="adjectives">Adjektive</string>
     <string name="verbes">Verben</string>
-    <string name="times">Zeiten</string>
+    <string name="times">Zeitformen</string>
     <string name="about">Über</string>
+    <string name="french_topics">Themen:</string>
+    <string name="about_text">Diese App wurde von RaviAnand Mohabir (Dan6erbond) erstellt als Übung für die native App-Entwicklung in Android und ist für den Privatgebrauch gedacht.</string>
+    <string name="website">Website</string>
+    <string name="french_times">Französische Zeitformen</string>
 </resources>

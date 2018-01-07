@@ -13,17 +13,12 @@
         android:id="@+id/nav_about"
         android:title="@string/about" />
 
-    <item android:title="@string/french">
+    <item android:title="@string/french"
+        android:id="@+id/nav_french">
         <menu>
             <item
                 android:id="@+id/nav_french_times"
                 android:title="@string/times" />
-            <item
-                android:id="@+id/nav_french_verbes"
-                android:title="@string/verbes" />
-            <item
-                android:id="@+id/nav_french_adjectives"
-                android:title="@string/adjectives" />
         </menu>
     </item>
 

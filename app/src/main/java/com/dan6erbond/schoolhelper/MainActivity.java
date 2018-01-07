@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createHomeFragment();
+        createFirstFragment();
 
-        nDrawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
+        nDrawerLayout = findViewById(R.id.drawerLayout);
         nToggle = new ActionBarDrawerToggle(this, nDrawerLayout, R.string.open, R.string.close);
 
         nDrawerLayout.addDrawerListener(nToggle);
@@ -43,13 +43,22 @@ public class MainActivity extends AppCompatActivity {
                     case(R.id.nav_zusammenfassungen):
                         changeFragment(new ZusammenfassungenFragment());
                         return true;
+                    case(R.id.nav_french_times):
+                        changeFragment(new FrenchTimesFragment());
+                        return true;
+                    case(R.id.nav_french):
+                        changeFragment(new FrenchFragment());
+                        return true;
+                    case(R.id.nav_about):
+                        changeFragment(new AboutFragment());
+                        return true;
                 }
                 return true;
             }
         });
     }
 
-    private void createHomeFragment(){
+    private void createFirstFragment(){
         HomeFragment fragment = new HomeFragment();
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
