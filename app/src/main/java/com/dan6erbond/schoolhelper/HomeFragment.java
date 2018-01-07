@@ -25,16 +25,6 @@ public class HomeFragment extends Fragment {
                 }
         );
 
-        final Button aboutButton = view.findViewById(R.id.home_about);
-        aboutButton.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v) {
-                        ((MainActivity)getActivity()).changeFragment(new AboutFragment());
-                    }
-                }
-        );
-
         final Button frenchButton = view.findViewById(R.id.home_french);
         frenchButton.setOnClickListener(
                 new View.OnClickListener(){

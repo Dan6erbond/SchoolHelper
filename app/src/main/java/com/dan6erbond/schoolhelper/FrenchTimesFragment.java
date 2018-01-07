@@ -44,21 +44,21 @@ public class FrenchTimesFragment extends Fragment implements AdapterView.OnItemS
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         switch((String) parent.getItemAtPosition(pos)){
-            case("Plus-que-Parfait"):
+            case "Plus-que-Parfait":
                 changeFragment(new PQPFragment());
-                return;
-            case("Passé composé"):
+                break;
+            case "Passé composé":
                 changeFragment(new PCFragment());
-                return;
-            case("Imparfait"):
+                break;
+            case "Imparfait":
                 changeFragment(new IFragment());
-                return;
-            case("Présent"):
+                break;
+            case "Présent":
                 changeFragment(new PFragment());
-                return;
-            case("Futur composé"):
+                break;
+            case "Futur composé":
                 changeFragment(new FCFragment());
-                return;
+                break;
         }
     }
 

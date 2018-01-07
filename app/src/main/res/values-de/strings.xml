@@ -18,4 +18,12 @@
     <string name="about_text">Diese App wurde von RaviAnand Mohabir (Dan6erbond) erstellt als Übung für die native App-Entwicklung in Android und ist für den Privatgebrauch gedacht.</string>
     <string name="website">Website</string>
     <string name="french_times">Französische Zeitformen</string>
+    <string name="usage">Gebrauch</string>
+    <string name="formation">Bildung</string>
+    <string name="example">Beispiel</string>
+    <string name="share">Teilen</string>
+    <string name="share_via">Teilen Mit:</string>
+    <string name="share_subject">Teilen Betreff</string>
+    <string name="share_text">Hole dir die SchoolHelper App von hier: https://github.com/Dan6erbond/SchoolHelper/releases</string>
+    <string name="french_time_fc_usage">" - feststehende Pläne und Handlungen"</string>
 </resources>

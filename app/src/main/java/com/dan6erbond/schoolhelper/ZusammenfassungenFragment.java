@@ -3,16 +3,13 @@ package com.dan6erbond.schoolhelper;
 import android.annotation.SuppressLint;
 import android.app.DownloadManager;
 import android.content.Context;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
@@ -29,9 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ZusammenfassungenFragment extends Fragment {
@@ -134,7 +129,7 @@ public class ZusammenfassungenFragment extends Fragment {
             //Further styling
             buttonParams.setMargins(convertDpToPx(10), convertDpToPx(5), convertDpToPx(10), convertDpToPx(5));
             button.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-            button.setTextColor(Color.parseColor("#FFFFFF"));
+            button.setTextColor(getResources().getColor(R.color.white));
             //Save the Button in the previousId parameter to place the next button below it
             previousId = id;
             //Apply the LayoutParams to the button

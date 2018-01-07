@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="25dp"
         android:text="@string/french_topics"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/ressources"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="25dp" />
 
     <FrameLayout
         android:id="@+id/french_times_fragment_container"
