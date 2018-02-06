@@ -18,15 +18,6 @@ public class IFragment extends Fragment {
         TextView header = view.findViewById(R.id.french_time_header);
         header.setText("Imparfait");
 
-        TextView usage = view.findViewById(R.id.french_time_usage);
-        usage.setText(R.string.french_time_i_usage);
-
-        TextView formation = view.findViewById(R.id.french_time_formation);
-        formation.setText(R.string.french_time_i_formation);
-
-        TextView example = view.findViewById(R.id.french_time_example);
-        example.setText(R.string.french_time_i_example);
-
         return view;
     }
 }

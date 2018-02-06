@@ -5,9 +5,9 @@ android {
     defaultConfig {
         applicationId "com.dan6erbond.schoolhelper"
         minSdkVersion 17
-        targetSdkVersion 23
-        versionCode 3
-        versionName "2.6"
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.9"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

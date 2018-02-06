@@ -13,12 +13,6 @@
         android:id="@+id/nav_about"
         android:title="@string/about" />
 
-    <item
-        android:id="@+id/nav_timetable"
-        android:title="@string/i1a_timetable" />
-
-    <!--All dropdowns must come here, single items come above-->
-
     <item android:title="@string/french"
         android:id="@+id/nav_french">
         <menu>

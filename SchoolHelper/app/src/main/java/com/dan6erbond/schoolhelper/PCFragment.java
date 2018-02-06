@@ -18,15 +18,6 @@ public class PCFragment extends Fragment {
         TextView header = view.findViewById(R.id.french_time_header);
         header.setText("Passé composé");
 
-        TextView usage = view.findViewById(R.id.french_time_usage);
-        usage.setText(R.string.french_time_pc_usage);
-
-        TextView formation = view.findViewById(R.id.french_time_formation);
-        formation.setText(R.string.french_time_pc_formation);
-
-        TextView example = view.findViewById(R.id.french_time_example);
-        example.setText(R.string.french_time_pc_example);
-
         return view;
     }
 }

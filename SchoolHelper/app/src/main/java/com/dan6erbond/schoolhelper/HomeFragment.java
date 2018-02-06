@@ -35,16 +35,6 @@ public class HomeFragment extends Fragment {
                 }
         );
 
-        final Button timtableButton = view.findViewById(R.id.home_timetable);
-        timtableButton.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v) {
-                        ((MainActivity)getActivity()).changeFragment(new TimetableFragment());
-                    }
-                }
-        );
-
         return view;
     }
 }
