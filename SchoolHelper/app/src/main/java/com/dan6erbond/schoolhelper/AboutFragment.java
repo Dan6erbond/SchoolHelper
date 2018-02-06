@@ -29,17 +29,6 @@ public class AboutFragment extends Fragment {
                 }
         );
 
-        final Button updatesButton = view.findViewById(R.id.button_check_updates);
-        updatesButton.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Dan6erbond/SchoolHelper/releases"));
-                        startActivity(browserIntent);
-                    }
-                }
-        );
-
         return view;
     }
 }
