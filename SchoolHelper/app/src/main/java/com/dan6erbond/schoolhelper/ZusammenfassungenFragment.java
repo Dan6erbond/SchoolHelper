@@ -2,11 +2,17 @@ package com.dan6erbond.schoolhelper;
 
 import android.annotation.SuppressLint;
 import android.app.DownloadManager;
+import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
@@ -26,8 +32,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
 import java.net.URL;
+
+import static android.support.v4.content.PermissionChecker.checkSelfPermission;
 
 public class ZusammenfassungenFragment extends Fragment {
 
@@ -35,8 +44,6 @@ public class ZusammenfassungenFragment extends Fragment {
     private String content;
 
     private RelativeLayout relativeLayout;
-
-    DownloadManager downloadManager;
 
     @SuppressLint("HandlerLeak")
     Handler downloadHandler = new Handler(){
@@ -150,14 +157,18 @@ public class ZusammenfassungenFragment extends Fragment {
     }
 
     private void downloadZusammenfassung(View v){
-        downloadManager = (DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
         Button button = (Button)v;
-        String zusammenfassungLink = "https://dan6erbond.github.io/I1A/Documents/Zusammenfassungen/" + button.getText() + ".pdf";
-        Log.i("TAG", zusammenfassungLink);
-        Uri uri = Uri.parse(zusammenfassungLink);
-        DownloadManager.Request request = new DownloadManager.Request(uri);
+        String zusammenfassungName = button.getText() + ".pdf";
+        String zusammenfassungLink = "https://dan6erbond.github.io/I1A/Documents/Zusammenfassungen/" + zusammenfassungName;
+        DownloadManager downloadManager = (DownloadManager)getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(zusammenfassungLink));
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        Long reference = downloadManager.enqueue(request);
+        downloadManager.enqueue(request);
+        BroadcastReceiver onComplete = new BroadcastReceiver() {
+            public void onReceive(Context context, Intent intent) {
+                //openZusammenfassung();
+            }
+        };
+        getActivity().registerReceiver (onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
     }
-
 }

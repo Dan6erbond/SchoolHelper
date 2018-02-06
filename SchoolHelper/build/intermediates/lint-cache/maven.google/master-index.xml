@@ -35,4 +35,5 @@
   <com.google.android.support/>
   <com.android.installreferrer/>
   <com.google.ar/>
+  <androidx.core/>
 </metadata>
