@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dialog_zusammenfassung_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="TextView" />
+
+    <TableLayout
+        android:id="@+id/dialog_zusammenfassung_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_zusammenfassung_title"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView1"
+                android:minEms="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/subject"/>
+            <TextView
+                android:id="@+id/dialog_zusammenfassung_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/topic"/>
+            <TextView
+                android:id="@+id/dialog_zusammenfassung_topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date"/>
+            <TextView
+                android:id="@+id/dialog_zusammenfassung_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/author"/>
+            <TextView
+                android:id="@+id/dialog_zusammenfassung_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/link"/>
+            <TextView
+                android:id="@+id/dialog_zusammenfassung_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:text="TextView"/>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

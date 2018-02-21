@@ -42,4 +42,10 @@
     <string name="no_pdf_viewer">No usable PDF Viewer installed/detected!</string>
     <string name="open_file">Open File:</string>
     <string name="i1a_timetable">I1A Timetable</string>
+    <string name="subject">Subject</string>
+    <string name="topic">Topic</string>
+    <string name="date">Date</string>
+    <string name="download">Download</string>
+    <string name="link" translatable="false">Link</string>
+    <string name="author">Author</string>
 </resources>

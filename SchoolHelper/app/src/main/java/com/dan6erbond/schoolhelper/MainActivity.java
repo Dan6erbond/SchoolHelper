@@ -3,8 +3,11 @@ package com.dan6erbond.schoolhelper;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -20,7 +23,7 @@ import android.widget.ShareActionProvider;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout nDrawerLayout;
+    private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle nToggle;
 
     @Override
@@ -28,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getRequiredPermissions();
         createFirstFragment();
 
-        nDrawerLayout = findViewById(R.id.drawerLayout);
-        nToggle = new ActionBarDrawerToggle(this, nDrawerLayout, R.string.open, R.string.close);
+        drawerLayout = findViewById(R.id.drawerLayout);
+        nToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
 
-        nDrawerLayout.addDrawerListener(nToggle);
+        drawerLayout.addDrawerListener(nToggle);
         nToggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener(){
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem){
+                drawerLayout.closeDrawers();
                 switch (menuItem.getItemId()){
                     case R.id.nav_home:
                         changeFragment(new HomeFragment());
@@ -67,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    private void getRequiredPermissions() {
+        int writeCheck = ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (writeCheck != PackageManager.PERMISSION_GRANTED && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            requestPermissions(new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},1024);
     }
 
     private void createFirstFragment(){
