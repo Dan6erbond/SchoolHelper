@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
-        android:text="@string/i1a_timetable"
+        android:text="@string/timetable"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -24,7 +24,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="20dp"
-        android:contentDescription="@string/i1a_timetable"
+        android:contentDescription="@string/timetable"
         app:srcCompat="@drawable/stundenplan" />
 
 </RelativeLayout>

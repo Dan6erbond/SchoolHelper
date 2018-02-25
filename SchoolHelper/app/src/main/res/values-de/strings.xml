@@ -32,10 +32,15 @@
     <string name="french_time_pqp_usage">" - Handlungen, die vor einer anderen stattgefunden haben"</string>
     <string name="no_pdf_viewer">Keinen kompatiblen PDF Reader installiert/gefunden!</string>
     <string name="open_file">Datei öffnen:</string>
-    <string name="i1a_timetable">I1A Stundenplan</string>
     <string name="subject">Fach</string>
     <string name="topic">Thema</string>
     <string name="date">Datum</string>
     <string name="download">herunterladen</string>
     <string name="author">Autor</string>
+    <string name="homework">Hausaufgaben</string>
+    <string name="timetable">Stundenplan</string>
+    <string name="add_homework">Hausaufgabe hinzufügen</string>
+    <string name="job">Aufgabe</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
 </resources>

@@ -10,12 +10,16 @@
         android:title="@string/zusammenfassungen" />
 
     <item
-        android:id="@+id/nav_about"
-        android:title="@string/about" />
+        android:id="@+id/nav_timetable"
+        android:title="@string/timetable" />
 
     <item
-        android:id="@+id/nav_timetable"
-        android:title="@string/i1a_timetable" />
+        android:id="@+id/nav_homework"
+        android:title="@string/homework" />
+
+    <item
+        android:id="@+id/nav_about"
+        android:title="@string/about" />
 
     <!--All dropdowns must come here, single items come above-->
 

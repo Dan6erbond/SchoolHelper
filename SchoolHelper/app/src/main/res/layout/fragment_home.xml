@@ -8,52 +8,56 @@
         android:id="@+id/ressources"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/home_zusammenfassungen"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp"
         android:text="@string/ressources"
-        android:textSize="30sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/home_zusammenfassungen"
-        android:layout_width="match_parent"
+    <ScrollView
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/zusammenfassungen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/StandardButton"/>
+        android:layout_width="match_parent"
+        android:id="@+id/home_fragment_scrollview"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/ressources">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/home_french"
-        style="@style/StandardButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/home_zusammenfassungen"
-        android:layout_centerHorizontal="true"
-        android:text="@string/french"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/home_zusammenfassungen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/zusammenfassungen"
+                style="@style/StandardButton"/>
 
-    <Button
-        android:id="@+id/home_timetable"
-        style="@style/StandardButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/home_french"
-        android:layout_centerHorizontal="true"
-        android:text="@string/i1a_timetable"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/home_french"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/home_zusammenfassungen"
+                android:text="@string/french"
+                style="@style/StandardButton"/>
+
+            <Button
+                android:id="@+id/home_timetable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/home_french"
+                android:text="@string/timetable"
+                style="@style/StandardButton"/>
+
+            <Button
+                android:id="@+id/home_homework"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/home_timetable"
+                android:text="@string/homework"
+                style="@style/StandardButton"/>
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>

@@ -3,6 +3,9 @@ package com.dan6erbond.schoolhelper;
 import android.content.Context;
 import android.util.Log;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.util.Optional;
 
@@ -14,16 +17,15 @@ public class Zusammenfassung{
     public String name;
     public String author;
 
-    public Zusammenfassung(String s, String t, String d, String a, String n){
-        subject = s;
-        topic = t;
-        date = d;
-        author = a;
-        if(n == "")
-            name = subject + " - " + topic + " - " + author + ".pdf";
-        else
-            name = n;
+    public Zusammenfassung(JSONObject data, String n) throws JSONException {
+        subject = data.getString("fach");
+        topic = data.getString("thema");
+        date = data.getString("datum");
+        author = data.getString("autor");
+        name = subject + " - " + topic + " - " + author + ".pdf";
         name = name.replace(" - RaviAnand Mohabir", "");
+        if(n != "")
+            name = n;
         link = "https://dan6erbond.github.io/I1A/Documents/Zusammenfassungen/" + name;
         link = link.replaceAll(" ", "%20");
     }

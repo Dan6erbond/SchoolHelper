@@ -15,7 +15,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        final Button zusammenfassungenButton = view.findViewById(R.id.home_zusammenfassungen);
+        Button zusammenfassungenButton = view.findViewById(R.id.home_zusammenfassungen);
         zusammenfassungenButton.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
                 }
         );
 
-        final Button frenchButton = view.findViewById(R.id.home_french);
+        Button frenchButton = view.findViewById(R.id.home_french);
         frenchButton.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
@@ -35,12 +35,22 @@ public class HomeFragment extends Fragment {
                 }
         );
 
-        final Button timtableButton = view.findViewById(R.id.home_timetable);
-        timtableButton.setOnClickListener(
+        Button timetableButton = view.findViewById(R.id.home_timetable);
+        timetableButton.setOnClickListener(
                 new View.OnClickListener(){
                     @Override
                     public void onClick(View v) {
                         ((MainActivity)getActivity()).changeFragment(new TimetableFragment());
+                    }
+                }
+        );
+
+        Button homeworkButton = view.findViewById(R.id.home_homework);
+        homeworkButton.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        ((MainActivity)getActivity()).changeFragment(new HomeworkFragment());
                     }
                 }
         );

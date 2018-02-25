@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_timetable:
                         changeFragment(new TimetableFragment());
                         break;
+                    case R.id.nav_homework:
+                        changeFragment(new HomeworkFragment());
+                        break;
                     case R.id.nav_about:
                         changeFragment(new AboutFragment());
                         break;
@@ -100,8 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
         transaction.commit();
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

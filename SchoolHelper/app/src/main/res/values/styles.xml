@@ -24,7 +24,7 @@
         <item name="android:layout_marginRight">30dp</item>
     </style>
 
-    <style name="ZusammenfassungDialogStyle" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+    <style name="DialogStyle" parent="Theme.AppCompat.DayNight.Dialog.Alert">
         <item name="android:windowAnimationStyle">@style/MyAnimation</item>
     </style>
 

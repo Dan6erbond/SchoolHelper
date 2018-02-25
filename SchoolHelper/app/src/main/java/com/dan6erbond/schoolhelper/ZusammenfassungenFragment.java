@@ -101,7 +101,12 @@ public class ZusammenfassungenFragment extends Fragment {
             File dir = new File(getActivity().getExternalFilesDir(null), "/Zusammenfassungen/");
             File[] files = dir.listFiles();
             for (File file:files) {
-                Zusammenfassung zusammenfassung = new Zusammenfassung("","","","", file.getName());
+                Zusammenfassung zusammenfassung = null;
+                try {
+                    zusammenfassung = new Zusammenfassung(new JSONObject(), file.getPath());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 createZusammenfassungButton(zusammenfassung);
             }
             Toast.makeText(getActivity(), R.string.no_internet, Toast.LENGTH_LONG).show();
@@ -119,13 +124,15 @@ public class ZusammenfassungenFragment extends Fragment {
         return false;
     }
 
-    private void createButtons(JSONArray zusammenfassungenArray) throws JSONException {
+    private void createButtons(JSONArray zusammenfassungenArray) {
         //Scan through all the zusammenfassungen
         for (int i = 0; i < zusammenfassungenArray.length(); i++) {
-            //Get current Zusammenfassung
-            JSONObject zusammenfassungJSON = zusammenfassungenArray.getJSONObject(i);
-            Zusammenfassung zusammenfassung = new Zusammenfassung(zusammenfassungJSON.getString("fach"), zusammenfassungJSON.getString("thema"), zusammenfassungJSON.getString("datum"), zusammenfassungJSON.getString("autor"), "");
-            Log.i("TAG", zusammenfassung.getFile(getActivity()).getPath());
+            Zusammenfassung zusammenfassung = null;
+            try {
+                zusammenfassung = new Zusammenfassung(zusammenfassungenArray.getJSONObject(i), "");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             createZusammenfassungButton(zusammenfassung);
         }
     }
@@ -168,7 +175,7 @@ public class ZusammenfassungenFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     //Build the AlertDialog, set the TextView's text and set the buttons actions.
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.ZusammenfassungDialogStyle);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.DialogStyle);
                     View view = getLayoutInflater().inflate(R.layout.dialog_zusammenfassung, null);
                     TextView tvTitle = view.findViewById(R.id.dialog_zusammenfassung_title);
                     TextView tvSubject = view.findViewById(R.id.dialog_zusammenfassung_subject);

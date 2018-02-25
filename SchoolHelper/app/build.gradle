@@ -6,8 +6,8 @@ android {
         applicationId "com.dan6erbond.schoolhelper"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 9
-        versionName "3.8"
+        versionCode 10
+        versionName "4.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
