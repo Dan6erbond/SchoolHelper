@@ -225,10 +225,9 @@ public class HomeworkFragment extends Fragment {
     }
 
     private void uploadHomework(){
-        JSONObject jObject = new JSONObject();
+        JSONArray jArray = new JSONArray();
         try
         {
-            JSONArray jArray = new JSONArray();
             for (Homework h : homeworkArray)
             {
                 JSONObject homeworkJSON = new JSONObject();
@@ -237,11 +236,10 @@ public class HomeworkFragment extends Fragment {
                 homeworkJSON.put("aufgabe", h.job);
                 jArray.put(homeworkJSON);
             }
-            jObject.put("", jArray);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        String jsonContent = jObject.toString();
+        String jsonContent = jArray.toString();
         final File file = new File(getActivity().getExternalFilesDir(null), "/Homework.json");
         if(file.exists())
             file.delete();
