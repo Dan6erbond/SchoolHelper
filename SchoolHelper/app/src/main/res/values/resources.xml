@@ -9,4 +9,17 @@
         <item>Présent</item>
         <item>Futur composé</item>
     </string-array>
+    <string-array name="subjects">
+        <item>Deutsch</item>
+        <item>Englisch</item>
+        <item>ETEU: Biologie</item>
+        <item>ETEU: Chemie</item>
+        <item>ETEU: Geografie</item>
+        <item>Finanz- und Rechnungswesen</item>
+        <item>Französisch</item>
+        <item>Geschichte</item>
+        <item>Mathematik</item>
+        <item>Informatik</item>
+        <item>Wirtschaft und Recht</item>
+    </string-array>
 </resources>

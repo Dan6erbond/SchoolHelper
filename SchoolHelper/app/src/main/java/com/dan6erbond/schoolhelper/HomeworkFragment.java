@@ -15,8 +15,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -37,13 +40,16 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 public class HomeworkFragment extends Fragment {
 
     //Tutorial used to get FTP knowledge: http://wiki-android.blogspot.ch/2012/12/creating-android-ftp-client-ftp.html
-
     private FTPClient mFTPClient = new FTPClient();
     ArrayList<Homework> homeworkArray = new ArrayList<Homework>();
 
@@ -123,12 +129,21 @@ public class HomeworkFragment extends Fragment {
                         //Build the AlertDialog, set the TextView's text and set the buttons actions.
                         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.DialogStyle);
                         View view = getLayoutInflater().inflate(R.layout.dialog_add_homework, null);
-                        final EditText date = view.findViewById(R.id.dialog_add_homework_date);
-                        final EditText subject = view.findViewById(R.id.dialog_add_homework_subject);
+                        final DatePicker datePicker = view.findViewById(R.id.dialog_add_homework_date);
+                        final Spinner subject = view.findViewById(R.id.dialog_add_homework_subject);
+                        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.subjects, android.R.layout.simple_spinner_item);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        subject.setAdapter(adapter);
                         final EditText job = view.findViewById(R.id.dialog_add_homework_job);
                         builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                addHomework(date.getText().toString(), subject.getText().toString(), job.getText().toString());
+                                Calendar calendar = Calendar.getInstance();
+                                calendar.set(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
+                                Date dateUnform = calendar.getTime();
+                                SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+                                String date = format.format(dateUnform);
+
+                                addHomework(date, subject.getSelectedItem().toString(), job.getText().toString());
                                 dialog.dismiss();
                             }
                         });
@@ -183,13 +198,15 @@ public class HomeworkFragment extends Fragment {
                 }
                 homeworkArray.add(new Homework(homework.getString("datum"), homework.getString("fach"), homework.getString("aufgabe")));
             }
-            LoadHomeworkTable();
+            Collections.sort(homeworkArray);
+            uploadHomework();
+            loadHomeworkTable();
         } catch (JSONException e) {
             Log.i("TAG", e.getMessage());
         }
     }
 
-    private void LoadHomeworkTable() {
+    private void loadHomeworkTable() {
         for (Homework h : homeworkArray){
             addHomeworkToTable(h);
         }
