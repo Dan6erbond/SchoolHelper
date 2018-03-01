@@ -43,4 +43,6 @@
     <string name="job">Aufgabe</string>
     <string name="cancel">Abbrechen</string>
     <string name="save">Speichern</string>
+    <string name="add_homework_notification_title">Hast du Hausaufgaben erhalten?</string>
+    <string name="add_homework_notification_text">Füge die Hausaufgaben welche du erhalten hast der App zu um sie nicht zu vergessen!</string>
 </resources>

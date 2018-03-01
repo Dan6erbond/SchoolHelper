@@ -1,5 +1,8 @@
 package com.dan6erbond.schoolhelper;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -21,10 +24,18 @@ import android.view.MenuItem;
 import android.widget.RelativeLayout;
 import android.widget.ShareActionProvider;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Calendar;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle nToggle;
+
+    int[][] notificationTimes = new int[][]{{8,9,10,11,12,13,13,14,15,16,17},{30,20,15,15,10,0,50,45,40,35,30}};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +86,26 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        for (int i = 0; i < notificationTimes[0].length; i++){
+            addNotification(notificationTimes[0][i], notificationTimes[1][i]);
+        }
+    }
+
+    private void addNotification(int hour, int min){
+        Calendar setCalendar = Calendar.getInstance();
+        setCalendar.set(Calendar.HOUR_OF_DAY, hour);
+        setCalendar.set(Calendar.MINUTE, min);
+        setCalendar.set(Calendar.SECOND, 0);
+
+        ComponentName receiver = new ComponentName(this, NotificationReceiver.class);
+        PackageManager pm = this.getPackageManager();
+        pm.setComponentEnabledSetting(receiver, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+
+        Intent intent1 = new Intent(this, NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager am = (AlarmManager) this.getSystemService(ALARM_SERVICE);
+        am.setInexactRepeating(AlarmManager.RTC_WAKEUP, setCalendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
     }
 
     private void getRequiredPermissions() {

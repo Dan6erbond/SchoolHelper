@@ -53,4 +53,6 @@
     <string name="job">Job</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="add_homework_notification_title">Did you get any homework?</string>
+    <string name="add_homework_notification_text">Add any homework you got to the app so you won\'t forget it!</string>
 </resources>

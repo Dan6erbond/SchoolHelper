@@ -46,6 +46,11 @@
                 android:theme="@android:style/Widget.DeviceDefault.DatePicker"
                 android:id="@+id/dialog_add_homework_date"
                 android:datePickerMode="spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:scaleX=".75"
+                android:scaleY=".75"
                 android:minDate="01/01/2000"
                 android:calendarViewShown="false"
                 android:minWidth="200dp"/>
