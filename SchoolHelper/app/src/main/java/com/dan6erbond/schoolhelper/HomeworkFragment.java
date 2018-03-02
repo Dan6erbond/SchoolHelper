@@ -40,12 +40,15 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 
 public class HomeworkFragment extends Fragment {
 
@@ -199,11 +202,35 @@ public class HomeworkFragment extends Fragment {
                 homeworkArray.add(new Homework(homework.getString("datum"), homework.getString("fach"), homework.getString("aufgabe")));
             }
             Collections.sort(homeworkArray);
+            deleteOldHomework();
             uploadHomework();
             loadHomeworkTable();
         } catch (JSONException e) {
             Log.i("TAG", e.getMessage());
         }
+    }
+
+    private void deleteOldHomework() {
+        List<Homework> toRemove = new ArrayList<>();
+        for (Homework homework : homeworkArray) {
+            SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+
+            Date date1 = new Date();
+            Date date2 = new Date(date1.getTime() - 3 * 24 * 60 * 60 * 1000);
+
+            try {
+                date1 = format.parse(homework.date);
+            }
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            if(date1.before(date2)){
+                Log.i("TAG", homework.job);
+                toRemove.add(homework);
+            }
+        }
+        homeworkArray.removeAll(toRemove);
     }
 
     private void loadHomeworkTable() {
