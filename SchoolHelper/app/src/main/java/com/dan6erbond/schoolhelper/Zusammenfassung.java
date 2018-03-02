@@ -16,6 +16,7 @@ public class Zusammenfassung{
     public String link;
     public String name;
     public String author;
+    //TODO: add description for Zusammenfassung
 
     public Zusammenfassung(JSONObject data, String n) throws JSONException {
         subject = data.getString("fach");

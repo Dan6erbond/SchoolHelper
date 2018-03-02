@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //TODO: Only add notifications if user wants them -> Settings View
         for (int i = 0; i < notificationTimes[0].length; i++) {
             addNotification(notificationTimes[0][i], notificationTimes[1][i], i);
         }
