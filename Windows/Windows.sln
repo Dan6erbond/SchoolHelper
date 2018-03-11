@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolHelper", "SchoolHelper\SchoolHelper.csproj", "{0014A8CD-752A-45E0-B507-76A9A8802ADA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0014A8CD-752A-45E0-B507-76A9A8802ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0014A8CD-752A-45E0-B507-76A9A8802ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0014A8CD-752A-45E0-B507-76A9A8802ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0014A8CD-752A-45E0-B507-76A9A8802ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BEC02E1-0C83-4591-9F4F-D59234CBD713}
+	EndGlobalSection
+EndGlobal

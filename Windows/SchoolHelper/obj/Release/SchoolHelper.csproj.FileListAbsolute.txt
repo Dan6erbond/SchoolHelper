@@ -1,0 +1,15 @@
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\bin\Release\SchoolHelper.exe.config
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\bin\Release\SchoolHelper.exe
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\bin\Release\SchoolHelper.pdb
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\bin\Release\Newtonsoft.Json.dll
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\bin\Release\Newtonsoft.Json.xml
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.csprojResolveAssemblyReference.cache
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.AddHomeworkForm.resources
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.HomeworkForm.resources
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.MainForm.resources
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.Properties.Resources.resources
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.csproj.GenerateResource.cache
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.csproj.CoreCompileInputs.cache
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.csproj.CopyComplete
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.exe
+D:\Data\Development\Dan6erbond\SchoolHelper\Windows\SchoolHelper\obj\Release\SchoolHelper.pdb

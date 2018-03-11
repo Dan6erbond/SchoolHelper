@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">SchoolHelper</string>
+    <string name="zusammenfassungen">Summarys</string>
+    <string name="available_zusammenfassungen">Available Summarys:</string>
+    <string name="back">Back</string>
+    <string name="ressources">Ressources</string>
+    <string name="home">Home</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="no_internet">No internet connection found! Try turning on Wi-Fi or mobile data.</string>
+    <string name="french">French</string>
+    <string name="adjectives">Adjectives</string>
+    <string name="verbes">Verbes</string>
+    <string name="times">Times</string>
+    <string name="about">About</string>
+    <string name="french_topics">Topics:</string>
+    <string name="about_text">This app was developed by RaviAnand Mohabir (Dan6erbond) as practice for native Android Development and is intended for personal use.\n\nLogo Design by Simon Bänsch</string>
+    <string name="website">Website</string>
+    <string name="french_times">French Times</string>
+    <string name="usage">Usage</string>
+    <string name="formation">Formation</string>
+    <string name="example">Example</string>
+    <string name="share">Share</string>
+    <string name="share_subject">Share Subject</string>
+    <string name="share_via">Share Via:</string>
+    <string name="share_text">Get the SchoolHelper App from here: https://github.com/Dan6erbond/SchoolHelper/releases</string>
+    <string name="french_time_p_usage"> - facts and conditions\n - currently going actions\n - planned actions in the future\n - regular actions"</string>
+    <string name="french_time_p_formation" translatable="false"> je parle\n tu parles\n il/elle parle\n nous parlons\n vous parlez\n ils/elles parlent</string>
+    <string name="french_time_pqp_usage"> - actions that took place before another action</string>
+    <string name="french_time_pqp_formation" translatable="false"> j’avais parlé\n tu avais parlé\n il/elle avait parlé\n nous avions parlé\n vous aviez parlé\n ils/elles avaient parlé\n  j’étais sorti/e\n tu étais sorti/e\n il/elle était sorti/e\n nous étions sorti(e)s\n vous étiez sorti(e)s\n ils/elles étaient sorti(e)s</string>
+    <string name="french_time_pc_usage"> - sudden actions in the past\n - completed actions in the past\n - chains of actions in the past\n - new actions in the past while another action takes place</string>
+    <string name="french_time_pc_formation" translatable="false"> j’ai parlé\n tu as parlé\n il/elle a parlé\n nous avons parlé\n vous avez parlé\n ils/elles ont parlé\n  je suis sorti/e\n tu es sorti/e\n il/elle est sorti/e\n nous sommes sorti(e)s\n vous êtes sorti(e)s\n ils/elles sont sorti(e)s</string>
+    <string name="french_time_pc_example" translatable="false"> - Tout à coup le téléphone a sonné.\n - Il a fait un voyage.\n - Je me suis levé, j’ai eu mon petit déjeuner et puis je suis parti.\n - J’étais seul quand il a appelé.</string>
+    <string name="french_time_i_usage"> - description of an atmosphere\n - repetitive actions in the past\n - simultaneous actions in the past\n - ongoing action while another one takes place</string>
+    <string name="french_time_i_formation" translatable="false"> je parlais tu parlais\n il/elle parlait\n nous parlions\n vous parliez\n ils/elles parlaient</string>
+    <string name="french_time_i_example" translatable="false"> - Il faisait beau.\n - Il parlait avec elle chaque jour.\n - Mon père travaillait et j’étais à l’école.\n - Nous étions à la maison, quand la police a sonné.</string>
+    <string name="french_time_fc_usage"> - fixed plans and actions"</string>
+    <string name="french_time_fc_formation" translatable="false"> je vais parler\n tu vas parler\n il/elle va parler\n nous allons parler\n vous allez parler\n ils/elles vont parler</string>
+    <string name="french_time_fc_example" translatable="false"> - Je vais faire un voyage avec ma sœur.</string>
+    <string name="french_time_pqp_example" translatable="false"> - Le père avait parlé avec Tom avant Tom a téléphoné avec la police.</string>
+    <string name="french_time_p_example" translatable="false"> - L’homme est méchant.\n - Elle parle avec son amie.\n - Ella a un rendez-vous demain.\n - Il joue au foot tous les mardis.</string>
+    <string name="no_pdf_viewer">No usable PDF Viewer installed/detected!</string>
+    <string name="open_file">Open File:</string>
+    <string name="subject">Subject</string>
+    <string name="topic">Topic</string>
+    <string name="date">Date</string>
+    <string name="download">Download</string>
+    <string name="link" translatable="false">Link</string>
+    <string name="author">Author</string>
+    <string name="homework">Homework</string>
+    <string name="timetable">Timetable</string>
+    <string name="add_homework">Add Homework</string>
+    <string name="job">Job</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="add_homework_notification_title">Did you get any homework?</string>
+    <string name="add_homework_notification_text">Add any homework you got to the app so you won\'t forget it!</string>
+    <string name="loading_image">Image is being loaded, please wait a moment....</string>
+    <string name="future_homework">Future Homework:</string>
+    <string name="tomorrow_homework">Homework for tomorrow:</string>
+    <string name="past_homework">Past Homework:</string>
+    <string name="no_homework">No Homework!</string>
+    <string name="no_downloaded_zusammenfassungen">Couldn\'t find any offline available Summarys :(</string>
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/homework"
+        android:textSize="30sp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="90dp"
+            android:layout_marginBottom="80dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="10dp"
+                    android:id="@+id/TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tomorrow_homework"
+                    android:textSize="18sp"/>
+                <TableLayout
+                    android:id="@+id/homework_table_tomorrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:shrinkColumns="0"
+                    android:layout_below="@+id/TextView">
+                </TableLayout>
+                <TextView
+                    android:padding="10dp"
+                    android:id="@+id/TextView1"
+                    android:layout_below="@id/homework_table_tomorrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/future_homework"
+                    android:textSize="18sp"/>
+                <TableLayout
+                    android:id="@+id/homework_table_future"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:shrinkColumns="0"
+                    android:layout_below="@+id/TextView1">
+                </TableLayout>
+                <TextView
+                    android:padding="10dp"
+                    android:id="@+id/TextView2"
+                    android:layout_below="@+id/homework_table_future"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/past_homework"
+                    android:textSize="18sp"/>
+                <TableLayout
+                    android:id="@+id/homework_table_past"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:shrinkColumns="0"
+                    android:layout_below="@id/TextView2">
+                </TableLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    <Button
+        android:id="@+id/homework_add"
+        style="@style/StandardButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/add_homework" />
+
+</RelativeLayout>
