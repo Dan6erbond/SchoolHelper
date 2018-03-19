@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SchoolHelper
@@ -18,8 +12,8 @@ namespace SchoolHelper
 		public AddHomeworkForm(HomeworkForm pf)
 		{
 			InitializeComponent();
-			Icon = new System.Drawing.Icon("ic_launcher-web.ico");
 			label4.Visible = false;
+			txtBoxSubject.Text = Properties.Settings.Default.subject;
 			parentForm = pf;
 		}
 

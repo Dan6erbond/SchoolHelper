@@ -29,6 +29,99 @@
         android:id="@+id/french_times_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:id="@+id/french_time_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="TextView"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp">
+
+            <TableLayout
+                android:layout_margin="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:shrinkColumns="1"
+                android:paddingBottom="30dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/french_time_usage_title"
+                        android:text="@string/usage"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@drawable/french_time_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/french_time_usage"
+                        android:text="TextView"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:background="@drawable/french_time_content" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/french_time_formation_title"
+                        android:text="@string/formation"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@drawable/french_time_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/french_time_formation"
+                        android:text="TextView"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:background="@drawable/french_time_content" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/french_time_example_title"
+                        android:text="@string/example"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:textStyle="bold"
+                        android:background="@drawable/french_time_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/french_time_example"
+                        android:text="TextView"
+                        android:textSize="18sp"
+                        android:padding="10dp"
+                        android:background="@drawable/french_time_content" />
+                </TableRow>
+
+            </TableLayout>
+        </ScrollView>
+    </FrameLayout>
 
 </RelativeLayout>

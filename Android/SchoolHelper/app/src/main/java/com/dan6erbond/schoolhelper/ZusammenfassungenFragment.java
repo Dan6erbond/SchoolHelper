@@ -181,13 +181,12 @@ public class ZusammenfassungenFragment extends Fragment {
                     //Build the AlertDialog, set the TextView's text and set the buttons actions.
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.DialogStyle);
                     View view = getLayoutInflater().inflate(R.layout.dialog_zusammenfassung, null);
-                    TextView tvTitle = view.findViewById(R.id.dialog_zusammenfassung_title);
+                    builder.setMessage(zusammenfassung.name);
                     TextView tvSubject = view.findViewById(R.id.dialog_zusammenfassung_subject);
                     TextView tvTopic = view.findViewById(R.id.dialog_zusammenfassung_topic);
                     TextView tvDate = view.findViewById(R.id.dialog_zusammenfassung_date);
                     TextView tvLink = view.findViewById(R.id.dialog_zusammenfassung_link);
                     TextView tvAuthor = view.findViewById(R.id.dialog_zusammenfassung_author);
-                    tvTitle.setText(zusammenfassung.name);
                     tvSubject.setText(zusammenfassung.subject);
                     tvTopic.setText(zusammenfassung.topic);
                     tvDate.setText(zusammenfassung.date);

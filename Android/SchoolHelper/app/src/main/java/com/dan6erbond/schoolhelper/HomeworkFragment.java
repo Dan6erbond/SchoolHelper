@@ -25,21 +25,19 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPReply;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,13 +45,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class HomeworkFragment extends Fragment {
 
     //Tutorial used to get FTP knowledge: http://wiki-android.blogspot.ch/2012/12/creating-android-ftp-client-ftp.html
-    private FTPClient mFTPClient = new FTPClient();
-    ArrayList<Homework> homeworkArray = new ArrayList<>();
+    private ArrayList<Homework> homeworkArray = new ArrayList<>();
+    private String homeworkFileURL = "https://api.myjson.com/bins/1h8sp7";
 
     View view;
 
@@ -77,47 +77,25 @@ public class HomeworkFragment extends Fragment {
             Thread downloadFile = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    //Connect to the host
                     try {
-                        mFTPClient.connect("dan6erbond.bplaced.net", 21);
-                    } catch (IOException e) {
-                        Log.i("TAG", e.getMessage());
-                    }
-                    try {
-                        mFTPClient.login("dan6erbond_I1A", "I1A_2017_18");
-                    } catch (IOException e) {
-                        Log.i("TAG", e.getMessage());
-                    }
-                    //Check the reply code, if positive mean connection success
-                    if (FTPReply.isPositiveCompletion(mFTPClient.getReplyCode())) {
-                        //Set File Transfer Mode to ASCII File Type to transfer basic text
-                        try {
-                            mFTPClient.setFileType(FTP.ASCII_FILE_TYPE);
-                        } catch (IOException e) {
-                            Log.i("TAG", e.getMessage());
+                        StringBuilder resultReader = new StringBuilder();
+                        URL url = new URL(homeworkFileURL);
+                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        conn.setRequestMethod("GET");
+                        BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                        String line;
+                        while ((line = rd.readLine()) != null) {
+                            resultReader.append(line);
                         }
-                        mFTPClient.enterLocalPassiveMode();
-
-                        String desFilePath = new File(getActivity().getExternalFilesDir(null), "/Homework.json").getPath();
-                        FileOutputStream desFileStream = null;
-                        try {
-                            desFileStream = new FileOutputStream(desFilePath);
-                        } catch (FileNotFoundException e) {
-                            Log.i("TAG", e.getMessage());
-                        }
-                        try {
-                            mFTPClient.retrieveFile("Hausaufgaben.json", desFileStream);
-                        } catch (IOException e) {
-                            Log.i("TAG", e.getMessage());
-                        }
-                        try {
-                            desFileStream.close();
-                        } catch (IOException e) {
-                            Log.i("TAG", e.getMessage());
-                        }
-
-                        //Call downloadHandler's handleMessage
+                        rd.close();
+                        final File file = new File(getActivity().getExternalFilesDir(null), "/Homework.json");
+                        FileWriter writer = new FileWriter(file);
+                        writer.append(resultReader.toString());
+                        writer.flush();
+                        writer.close();
                         downloadHandler.sendEmptyMessage(0);
+                    } catch (Exception e) {
+                        Log.i("TAG", e.getMessage());
                     }
                 }
             });
@@ -127,36 +105,37 @@ public class HomeworkFragment extends Fragment {
                     new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                                //Build the AlertDialog, set the TextView's text and set the buttons actions.
-                                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.DialogStyle);
-                                View view = getLayoutInflater().inflate(R.layout.dialog_add_homework, null);
-                                final DatePicker datePicker = view.findViewById(R.id.dialog_add_homework_date);
-                                final Spinner subject = view.findViewById(R.id.dialog_add_homework_subject);
-                                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.subjects, android.R.layout.simple_spinner_item);
-                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                subject.setAdapter(adapter);
-                                final EditText job = view.findViewById(R.id.dialog_add_homework_job);
-                                builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        Calendar calendar = Calendar.getInstance();
-                                        calendar.set(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
-                                        Date dateUnform = calendar.getTime();
-                                        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-                                        String date = format.format(dateUnform);
+                            //Build the AlertDialog, set the TextView's text and set the buttons actions.
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.DialogStyle);
+                            builder.setMessage(R.string.add_homework);
+                            View view = getLayoutInflater().inflate(R.layout.dialog_add_homework, null);
+                            final DatePicker datePicker = view.findViewById(R.id.dialog_add_homework_date);
+                            final Spinner subject = view.findViewById(R.id.dialog_add_homework_subject);
+                            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.subjects, android.R.layout.simple_spinner_item);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            subject.setAdapter(adapter);
+                            final EditText job = view.findViewById(R.id.dialog_add_homework_job);
+                            builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Calendar calendar = Calendar.getInstance();
+                                    calendar.set(datePicker.getYear(), datePicker.getMonth(), datePicker.getDayOfMonth());
+                                    Date dateUnform = calendar.getTime();
+                                    SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+                                    String date = format.format(dateUnform);
 
-                                        addHomework(date, subject.getSelectedItem().toString(), job.getText().toString());
-                                        dialog.dismiss();
-                                    }
-                                });
-                                builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        dialog.dismiss();
-                                    }
-                                });
-                                builder.setView(view);
-                                AlertDialog dialog = builder.create();
-                                dialog.show();
-                            }
+                                    addHomework(date, subject.getSelectedItem().toString(), job.getText().toString());
+                                    dialog.dismiss();
+                                }
+                            });
+                            builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.dismiss();
+                                }
+                            });
+                            builder.setView(view);
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
+                        }
                     });
         } else {
             Toast.makeText(getActivity(), R.string.no_internet, Toast.LENGTH_LONG).show();
@@ -170,8 +149,12 @@ public class HomeworkFragment extends Fragment {
     private void addHomework(String d, String s, String j) {
         Homework h = new Homework(d, s, j);
         homeworkArray.add(h);
+        //remove duplicates
+        Set<Homework> hs = new HashSet<>(homeworkArray);
+        homeworkArray = new ArrayList<>(hs);
+        //sort array -> done after since HashSet doesn't retain order
         Collections.sort(homeworkArray);
-        if(isInternetWorking(getActivity())){
+        if (isInternetWorking(getActivity())) {
             deleteOldHomework();
             uploadHomework();
         }
@@ -186,28 +169,19 @@ public class HomeworkFragment extends Fragment {
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
-
             while ((line = br.readLine()) != null) {
                 text.append(line);
                 text.append('\n');
             }
             br.close();
-        } catch (IOException e) {
-            Log.i("TAG", e.getMessage());
-        }
-        try {
+
             JSONArray homeworkJSONArray = new JSONArray(text.toString());
             for (int i = 0; i < homeworkJSONArray.length(); i++) {
-                JSONObject homework = new JSONObject();
-                try {
-                    homework = homeworkJSONArray.getJSONObject(i);
-                } catch (JSONException e) {
-                    Log.i("TAG", e.getMessage());
-                }
+                JSONObject homework = homeworkJSONArray.getJSONObject(i);
                 homeworkArray.add(new Homework(homework.getString("datum"), homework.getString("fach"), homework.getString("aufgabe")));
             }
             loadHomeworkTable();
-        } catch (JSONException e) {
+        } catch (Exception e) {
             Log.i("TAG", e.getMessage());
         }
     }
@@ -227,7 +201,6 @@ public class HomeworkFragment extends Fragment {
             }
 
             if (date1.before(date2)) {
-                Log.i("TAG", homework.job);
                 toRemove.add(homework);
             }
         }
@@ -306,7 +279,7 @@ public class HomeworkFragment extends Fragment {
         //Subject TextView
         TextView subject = new TextView(getActivity());
         subject.setText(h.subject);
-        subject.setPadding(0,0,20,0);
+        subject.setPadding(0, 0, 20, 0);
         //Job TextView
         TextView job = new TextView(getActivity());
         job.setText(h.job);
@@ -340,10 +313,8 @@ public class HomeworkFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        String jsonContent = jArray.toString();
+        final String jsonContent = jArray.toString();
         final File file = new File(getActivity().getExternalFilesDir(null), "/Homework.json");
-        if (file.exists())
-            file.delete();
         try {
             FileWriter writer = new FileWriter(file);
             writer.append(jsonContent);
@@ -356,48 +327,22 @@ public class HomeworkFragment extends Fragment {
         Thread uploadFile = new Thread(new Runnable() {
             @Override
             public void run() {
-                FileInputStream srcFileStream = null;
-                try {
-                    srcFileStream = new FileInputStream(file);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    mFTPClient.storeFile("Hausaufgaben.json", srcFileStream);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                try {
-                    srcFileStream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                try{
+                    URL url = new URL(homeworkFileURL);
+                    HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+                    httpCon.setDoOutput(true);
+                    httpCon.setRequestMethod("PUT");
+                    httpCon.setRequestProperty("Content-Type", "application/json; charset=utf-8");
+                    OutputStreamWriter out = new OutputStreamWriter(
+                            httpCon.getOutputStream());
+                    out.write(jsonContent);
+                    out.close();
+                    httpCon.getInputStream();
+                } catch (Exception e){
+                    Log.i("TAG", e.getMessage());
                 }
             }
         });
         uploadFile.start();
-    }
-
-    @Override
-    public void onDestroy() {
-        if (isInternetWorking(getActivity())) {
-            Thread disconnectFTP = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        mFTPClient.logout();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    try {
-                        mFTPClient.disconnect();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            disconnectFTP.start();
-        }
-
-        super.onDestroy();
     }
 }

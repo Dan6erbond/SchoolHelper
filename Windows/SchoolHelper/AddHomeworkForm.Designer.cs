@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddHomeworkForm));
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -103,11 +104,13 @@
 			this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
 			this.btnAdd.FlatAppearance.BorderSize = 0;
 			this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAdd.ForeColor = System.Drawing.Color.White;
 			this.btnAdd.Location = new System.Drawing.Point(204, 160);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(135, 23);
 			this.btnAdd.TabIndex = 8;
-			this.btnAdd.Text = "Hinzufügen";
+			this.btnAdd.Text = "HINZUFÜGEN";
 			this.btnAdd.UseVisualStyleBackColor = false;
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
 			// 
@@ -117,11 +120,13 @@
 			this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
 			this.btnCancel.FlatAppearance.BorderSize = 0;
 			this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCancel.ForeColor = System.Drawing.Color.White;
 			this.btnCancel.Location = new System.Drawing.Point(50, 160);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(135, 23);
 			this.btnCancel.TabIndex = 9;
-			this.btnCancel.Text = "Abbrechen";
+			this.btnCancel.Text = "ABBRECHEN";
 			this.btnCancel.UseVisualStyleBackColor = false;
 			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
@@ -139,6 +144,9 @@
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
 			this.Name = "AddHomeworkForm";
 			this.Text = "AddHomeworkForm";
 			this.ResumeLayout(false);

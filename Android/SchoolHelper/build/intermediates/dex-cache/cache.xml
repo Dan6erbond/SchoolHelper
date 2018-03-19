@@ -3,13 +3,13 @@
 
     <item
         is-multidex="false"
-        jar="D:\Data\Development\Dan6erbond\SchoolHelper\Android\SchoolHelper\app\libs\commons-net-3.6.jar"
+        jar="D:\Data\Development\TechDog\SchoolHelper\Android\SchoolHelper\app\libs\commons-net-3.6.jar"
         jumboMode="false"
         min-sdk-version="14"
         optimize="true"
         revision="26.0.2"
         sha1="b71de00508dcb078d2b24b5fa7e538636de9b3da">
-        <dex dex="D:\Data\Development\Dan6erbond\SchoolHelper\Android\SchoolHelper\app\build\intermediates\transforms\preDex\release\37.jar" />
+        <dex dex="D:\Data\Development\TechDog\SchoolHelper\Android\SchoolHelper\app\build\intermediates\transforms\preDex\release\1.jar" />
     </item>
 
 </items>

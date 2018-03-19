@@ -58,12 +58,19 @@
     <Compile Include="AddHomeworkForm.Designer.cs">
       <DependentUpon>AddHomeworkForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Credential.cs" />
     <Compile Include="Homework.cs" />
     <Compile Include="HomeworkForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HomeworkForm.Designer.cs">
       <DependentUpon>HomeworkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -78,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeworkForm.resx">
       <DependentUpon>HomeworkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -5,13 +5,11 @@ namespace SchoolHelper
 {
 	public partial class MainForm : Form
 	{
-
-		public static double version = 0.1;
+		public static double version = 0.4;
 
 		public MainForm()
 		{
 			InitializeComponent();
-			Icon = new System.Drawing.Icon("ic_launcher-web.ico");
 			label2.Text = "v" + version;
 		}
 
@@ -24,6 +22,12 @@ namespace SchoolHelper
 		{
 			HomeworkForm homework = new HomeworkForm();
 			homework.ShowDialog();
+		}
+
+		private void btnAnmelden_Click(object sender, EventArgs e)
+		{
+			LoginForm login = new LoginForm();
+			login.ShowDialog();
 		}
 	}
 }

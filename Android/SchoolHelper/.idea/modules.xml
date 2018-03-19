@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SchoolHelper.iml" filepath="$PROJECT_DIR$/SchoolHelper.iml" />
-      <module fileurl="file://D:\Data\Development\Dan6erbond\SchoolHelper\Android\SchoolHelper\SchoolHelper.iml" filepath="D:\Data\Development\Dan6erbond\SchoolHelper\Android\SchoolHelper\SchoolHelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

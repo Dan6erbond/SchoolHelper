@@ -1,48 +1,13 @@
 [
   {
-    "datum": "07.03.2018",
-    "fach": "Deutsch",
-    "aufgabe": "Buch auswählen -> E-Mail"
-  },
-  {
-    "datum": "07.03.2018",
-    "fach": "Finanz- und Rechnungswesen",
-    "aufgabe": "S. 26, Aufgabe 11 (Blatt)"
-  },
-  {
-    "datum": "07.03.2018",
-    "fach": "Informatik",
-    "aufgabe": "A_117_1719_Netzwerkdokumentation"
-  },
-  {
-    "datum": "08.03.2018",
-    "fach": "ETEU: Chemie",
-    "aufgabe": "Kapitel 3.4 lesen"
-  },
-  {
-    "datum": "08.03.2018",
-    "fach": "Wirtschaft und Recht",
-    "aufgabe": "Blatt zu Vertragsabschluss"
-  },
-  {
-    "datum": "08.03.2018",
-    "fach": "ETEU: Chemie",
-    "aufgabe": "Skript S. (10) 11-13 und 15 studieren und beantworten"
-  },
-  {
-    "datum": "08.03.2018",
-    "fach": "ETEU: Chemie",
-    "aufgabe": "Buch Kap. 3.3 inkl. 3.08 - 3.12 + Kap. 3.4"
-  },
-  {
-    "datum": "09.03.2018",
-    "fach": "Englisch",
-    "aufgabe": "Eye of Minds bis S. 58 lesen"
-  },
-  {
     "datum": "15.03.2018",
     "fach": "Deutsch",
     "aufgabe": "Sunrise bis S. 84 lesen"
+  },
+  {
+    "datum": "15.03.2018",
+    "fach": "Geschichte",
+    "aufgabe": "Laptop mitnehmen"
   },
   {
     "datum": "16.03.2018",
@@ -50,9 +15,14 @@
     "aufgabe": "Eye of Minds bis S. 81 lesen"
   },
   {
-    "datum": "23.03.2018",
-    "fach": "ETEU: Chemie",
-    "aufgabe": "test"
+    "datum": "20.03.2018",
+    "fach": "Informatik",
+    "aufgabe": "9910 und 1704"
+  },
+  {
+    "datum": "20.03.2018",
+    "fach": "Informatik",
+    "aufgabe": "LA_404_1704_Schüler_erfassen"
   },
   {
     "datum": "06.04.2018",
@@ -65,14 +35,14 @@
     "aufgabe": "Eye of Minds bis S. 157 lesen"
   },
   {
-    "datum": "08.05.2018",
-    "fach": "Englisch",
-    "aufgabe": "Eye of Minds bis S. 205 lesen"
-  },
-  {
     "datum": "11.05.2018",
     "fach": "Englisch",
     "aufgabe": "Eye of Minds bis S. 176 lesen"
+  },
+  {
+    "datum": "18.05.2018",
+    "fach": "Englisch",
+    "aufgabe": "Eye of Minds bis S. 205 lesen"
   },
   {
     "datum": "25.05.2018",
