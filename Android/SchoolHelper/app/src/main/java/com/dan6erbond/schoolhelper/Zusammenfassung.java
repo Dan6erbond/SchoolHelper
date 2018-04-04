@@ -18,19 +18,19 @@ public class Zusammenfassung{
     public String author = "";
     //TODO: add description for Zusammenfassung
 
-    public Zusammenfassung(JSONObject data, String n) throws JSONException {
-        if(n == ""){
-            subject = data.getString("fach");
-            topic = data.getString("thema");
-            date = data.getString("datum");
-            author = data.getString("autor");
-            name = subject + " - " + topic + " - " + author + ".pdf";
-            name = name.replace(" - RaviAnand Mohabir", "");
-        } else {
-            name = n;
-        }
+    public Zusammenfassung(JSONObject data) throws JSONException {
+        subject = data.getString("fach");
+        topic = data.getString("thema");
+        date = data.getString("datum");
+        author = data.getString("autor");
+        name = subject + " - " + topic + " - " + author + ".pdf";
+        name = name.replace(" - RaviAnand Mohabir", "");
         link = "https://dan6erbond.github.io/I1A/Documents/Zusammenfassungen/" + name;
         link = link.replaceAll(" ", "%20");
+    }
+
+    public Zusammenfassung(String n){
+        name = n;
     }
 
     public File getFile(Context context){

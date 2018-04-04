@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mr_button_content_description">Tlačítko odesílání</string>
+    <string name="mr_chooser_searching">Hledání zařízení</string>
+    <string name="mr_chooser_title">Odesílat do</string>
+    <string name="mr_controller_casting_screen">Odesílání obsahu obrazovky</string>
+    <string name="mr_controller_close_description">Zavřít</string>
+    <string name="mr_controller_collapse_group">Sbalit</string>
+    <string name="mr_controller_disconnect">Odpojit</string>
+    <string name="mr_controller_expand_group">Rozbalit</string>
+    <string name="mr_controller_no_info_available">Nejsou k dispozici žádné informace</string>
+    <string name="mr_controller_no_media_selected">Nebyla vybrána žádná média</string>
+    <string name="mr_controller_pause">Pozastavit</string>
+    <string name="mr_controller_play">Přehrát</string>
+    <string name="mr_controller_stop">Zastavit odesílání</string>
+    <string name="mr_system_route_name">Systém</string>
+    <string name="mr_user_route_category_name">Zařízení</string>
+    <string name="abc_action_bar_home_description">Přejít na plochu</string>
+    <string name="abc_action_bar_home_description_format">%1$s – %2$s</string>
+    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s – %3$s</string>
+    <string name="abc_action_bar_up_description">Přejít nahoru</string>
+    <string name="abc_action_menu_overflow_description">Více možností</string>
+    <string name="abc_action_mode_done">Hotovo</string>
+    <string name="abc_activity_chooser_view_see_all">Zobrazit vše</string>
+    <string name="abc_activitychooserview_choose_application">Vybrat aplikaci</string>
+    <string name="abc_capital_off">VYPNUTO</string>
+    <string name="abc_capital_on">ZAPNUTO</string>
+    <string name="abc_search_hint">Vyhledat…</string>
+    <string name="abc_searchview_description_clear">Smazat dotaz</string>
+    <string name="abc_searchview_description_query">Vyhledávací dotaz</string>
+    <string name="abc_searchview_description_search">Hledat</string>
+    <string name="abc_searchview_description_submit">Odeslat dotaz</string>
+    <string name="abc_searchview_description_voice">Hlasové vyhledávání</string>
+    <string name="abc_shareactionprovider_share_with">Sdílet pomocí</string>
+    <string name="abc_shareactionprovider_share_with_application">Sdílet pomocí %s</string>
+    <string name="abc_toolbar_collapse_description">Sbalit</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+</resources>

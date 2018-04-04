@@ -3,6 +3,26 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\User3\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.1\f07c773f7b3a03c3801d405cadbdc93f7548e321\jackson-databind-2.4.1.jar"
+        jumboMode="false"
+        min-sdk-version="14"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f07c773f7b3a03c3801d405cadbdc93f7548e321">
+        <dex dex="D:\Data\Development\TechDog\SchoolHelper\Android\SchoolHelper\app\build\intermediates\transforms\preDex\release\29.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User3\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.1\b130bcfb5a9c410c3cbd2e0adec9437e69a39e2c\jackson-core-2.4.1.jar"
+        jumboMode="false"
+        min-sdk-version="14"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b130bcfb5a9c410c3cbd2e0adec9437e69a39e2c">
+        <dex dex="D:\Data\Development\TechDog\SchoolHelper\Android\SchoolHelper\app\build\intermediates\transforms\preDex\release\30.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Data\Development\TechDog\SchoolHelper\Android\SchoolHelper\app\libs\commons-net-3.6.jar"
         jumboMode="false"
         min-sdk-version="14"
@@ -10,6 +30,16 @@
         revision="26.0.2"
         sha1="b71de00508dcb078d2b24b5fa7e538636de9b3da">
         <dex dex="D:\Data\Development\TechDog\SchoolHelper\Android\SchoolHelper\app\build\intermediates\transforms\preDex\release\1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User3\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.1\55605135bd7b836612e0bba7037c9669f6ccf89f\jackson-annotations-2.4.1.jar"
+        jumboMode="false"
+        min-sdk-version="14"
+        optimize="true"
+        revision="26.0.2"
+        sha1="55605135bd7b836612e0bba7037c9669f6ccf89f">
+        <dex dex="D:\Data\Development\TechDog\SchoolHelper\Android\SchoolHelper\app\build\intermediates\transforms\preDex\release\31.jar" />
     </item>
 
 </items>

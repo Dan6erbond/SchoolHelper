@@ -51,4 +51,15 @@
     <string name="past_homework">Vergangene Hausaufgaben:</string>
     <string name="no_homework">Keine Hausaufgaben!</string>
     <string name="no_downloaded_zusammenfassungen">Wir konnten leider keine offline-verfügbaren Zusammenfassungen finden :(</string>
+    <string name="timetableTimeDay">Zeit / Tag</string>
+    <string name="monday">Montag</string>
+    <string name="tuesday">Dienstag</string>
+    <string name="wednesday">Mittwoch</string>
+    <string name="thursday">Donnerstag</string>
+    <string name="friday">Freitag</string>
+    <string name="saturday">Samstag</string>
+    <string name="sunday">Sonntag</string>
+    <string name="time">Zeit</string>
+    <string name="location">Ort</string>
+    <string name="teacher">Lehrer</string>
 </resources>

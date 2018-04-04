@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mr_button_content_description">Cast-knap</string>
+    <string name="mr_chooser_searching">Finder enheder</string>
+    <string name="mr_chooser_title">Cast til</string>
+    <string name="mr_controller_casting_screen">Skærmen castes</string>
+    <string name="mr_controller_close_description">Luk</string>
+    <string name="mr_controller_collapse_group">Skjul</string>
+    <string name="mr_controller_disconnect">Afbryd</string>
+    <string name="mr_controller_expand_group">Udvid</string>
+    <string name="mr_controller_no_info_available">Der er ingen tilgængelige oplysninger</string>
+    <string name="mr_controller_no_media_selected">Der er ikke valgt nogen medier</string>
+    <string name="mr_controller_pause">Sæt på pause</string>
+    <string name="mr_controller_play">Afspil</string>
+    <string name="mr_controller_stop">Stop med at caste</string>
+    <string name="mr_system_route_name">System</string>
+    <string name="mr_user_route_category_name">Enheder</string>
+    <string name="abc_action_bar_home_description">Naviger hjem</string>
+    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
+    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
+    <string name="abc_action_bar_up_description">Naviger op</string>
+    <string name="abc_action_menu_overflow_description">Flere muligheder</string>
+    <string name="abc_action_mode_done">Luk</string>
+    <string name="abc_activity_chooser_view_see_all">Se alle</string>
+    <string name="abc_activitychooserview_choose_application">Vælg en app</string>
+    <string name="abc_capital_off">FRA</string>
+    <string name="abc_capital_on">TIL</string>
+    <string name="abc_search_hint">Søg…</string>
+    <string name="abc_searchview_description_clear">Ryd forespørgslen</string>
+    <string name="abc_searchview_description_query">Søgeforespørgsel</string>
+    <string name="abc_searchview_description_search">Søg</string>
+    <string name="abc_searchview_description_submit">Indsend forespørgslen</string>
+    <string name="abc_searchview_description_voice">Talesøgning</string>
+    <string name="abc_shareactionprovider_share_with">Del med</string>
+    <string name="abc_shareactionprovider_share_with_application">Del med %s</string>
+    <string name="abc_toolbar_collapse_description">Skjul</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+</resources>

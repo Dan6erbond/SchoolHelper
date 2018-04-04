@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mr_button_content_description">Przycisk Cast</string>
+    <string name="mr_chooser_searching">Znajdowanie urządzeń</string>
+    <string name="mr_chooser_title">Przesyłaj na</string>
+    <string name="mr_controller_casting_screen">Przesyłam ekran</string>
+    <string name="mr_controller_close_description">Zamknij</string>
+    <string name="mr_controller_collapse_group">Zwiń</string>
+    <string name="mr_controller_disconnect">Odłącz</string>
+    <string name="mr_controller_expand_group">Rozwiń</string>
+    <string name="mr_controller_no_info_available">Brak informacji</string>
+    <string name="mr_controller_no_media_selected">Nie wybrano multimediów</string>
+    <string name="mr_controller_pause">Wstrzymaj</string>
+    <string name="mr_controller_play">Odtwórz</string>
+    <string name="mr_controller_stop">Zatrzymaj przesyłanie</string>
+    <string name="mr_system_route_name">System</string>
+    <string name="mr_user_route_category_name">Urządzenia</string>
+    <string name="abc_action_bar_home_description">Przejdź do strony głównej</string>
+    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
+    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
+    <string name="abc_action_bar_up_description">Przejdź wyżej</string>
+    <string name="abc_action_menu_overflow_description">Więcej opcji</string>
+    <string name="abc_action_mode_done">Gotowe</string>
+    <string name="abc_activity_chooser_view_see_all">Zobacz wszystkie</string>
+    <string name="abc_activitychooserview_choose_application">Wybierz aplikację</string>
+    <string name="abc_capital_off">WYŁ.</string>
+    <string name="abc_capital_on">WŁ.</string>
+    <string name="abc_search_hint">Szukaj…</string>
+    <string name="abc_searchview_description_clear">Wyczyść zapytanie</string>
+    <string name="abc_searchview_description_query">Wyszukiwane hasło</string>
+    <string name="abc_searchview_description_search">Szukaj</string>
+    <string name="abc_searchview_description_submit">Wyślij zapytanie</string>
+    <string name="abc_searchview_description_voice">Wyszukiwanie głosowe</string>
+    <string name="abc_shareactionprovider_share_with">Udostępnij dla</string>
+    <string name="abc_shareactionprovider_share_with_application">Udostępnij dla %s</string>
+    <string name="abc_toolbar_collapse_description">Zwiń</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+</resources>

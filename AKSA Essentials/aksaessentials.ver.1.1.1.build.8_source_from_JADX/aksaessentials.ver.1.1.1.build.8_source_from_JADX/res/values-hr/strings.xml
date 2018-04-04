@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mr_button_content_description">Gumb za emitiranje</string>
+    <string name="mr_chooser_searching">Traženje uređaja</string>
+    <string name="mr_chooser_title">Emitiranje na</string>
+    <string name="mr_controller_casting_screen">Emitiranje zaslona</string>
+    <string name="mr_controller_close_description">Zatvaranje</string>
+    <string name="mr_controller_collapse_group">Sažimanje</string>
+    <string name="mr_controller_disconnect">Prekini vezu</string>
+    <string name="mr_controller_expand_group">Proširivanje</string>
+    <string name="mr_controller_no_info_available">Informacije nisu dostupne</string>
+    <string name="mr_controller_no_media_selected">Nije odabran nijedan medij</string>
+    <string name="mr_controller_pause">Pauziranje</string>
+    <string name="mr_controller_play">Reprodukcija</string>
+    <string name="mr_controller_stop">Zaustavi emitiranje</string>
+    <string name="mr_system_route_name">Sustav</string>
+    <string name="mr_user_route_category_name">Uređaji</string>
+    <string name="abc_action_bar_home_description">Idi na početnu</string>
+    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
+    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
+    <string name="abc_action_bar_up_description">Idi gore</string>
+    <string name="abc_action_menu_overflow_description">Dodatne opcije</string>
+    <string name="abc_action_mode_done">Gotovo</string>
+    <string name="abc_activity_chooser_view_see_all">Prikaži sve</string>
+    <string name="abc_activitychooserview_choose_application">Odabir aplikacije</string>
+    <string name="abc_capital_off">ISKLJUČENO</string>
+    <string name="abc_capital_on">UKLJUČENO</string>
+    <string name="abc_search_hint">Pretražite…</string>
+    <string name="abc_searchview_description_clear">Izbriši upit</string>
+    <string name="abc_searchview_description_query">Upit za pretraživanje</string>
+    <string name="abc_searchview_description_search">Pretraživanje</string>
+    <string name="abc_searchview_description_submit">Pošalji upit</string>
+    <string name="abc_searchview_description_voice">Glasovno pretraživanje</string>
+    <string name="abc_shareactionprovider_share_with">Dijeljenje sa</string>
+    <string name="abc_shareactionprovider_share_with_application">Dijeljenje sa: %s</string>
+    <string name="abc_toolbar_collapse_description">Sažmi</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+</resources>

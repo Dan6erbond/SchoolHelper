@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableLayout
+        android:id="@+id/dialog_add_homework_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:shrinkColumns="1"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/time"/>
+            <TextView
+                android:id="@+id/dialog_timetable_class_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/location"/>
+            <TextView
+                android:id="@+id/dialog_timetable_class_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/teacher"/>
+            <TextView
+                android:id="@+id/dialog_timetable_class_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                android:text="@string/homework"/>
+            <TextView
+                android:id="@+id/dialog_timetable_class_homework"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"/>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

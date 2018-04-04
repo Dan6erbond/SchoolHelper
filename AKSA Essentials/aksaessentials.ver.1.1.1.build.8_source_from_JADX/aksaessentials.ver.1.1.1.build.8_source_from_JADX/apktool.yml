@@ -1,0 +1,57 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: aksaessentials.ver.1.1.1.build.8.apk
+compressionType: false
+doNotCompress:
+- arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '19'
+sharedLibrary: false
+unknownFiles:
+  NOTICE: '8'
+  environment: '0'
+  typemap.jm: '0'
+  typemap.mj: '0'
+  assemblies/AKSAEssentials.Droid.dll: '0'
+  assemblies/AKSAEssentials.Droid.dll.config: '0'
+  assemblies/AKSAEssentials.dll: '0'
+  assemblies/AKSAEssentials.dll.config: '0'
+  assemblies/FormsViewGroup.dll: '0'
+  assemblies/System.Net.Http.Extensions.dll: '0'
+  assemblies/System.Net.Http.Primitives.dll: '0'
+  assemblies/Xamarin.Android.Support.Animated.Vector.Drawable.dll: '0'
+  assemblies/Xamarin.Android.Support.Design.dll: '0'
+  assemblies/Xamarin.Android.Support.v4.dll: '0'
+  assemblies/Xamarin.Android.Support.v7.AppCompat.dll: '0'
+  assemblies/Xamarin.Android.Support.v7.CardView.dll: '0'
+  assemblies/Xamarin.Android.Support.v7.MediaRouter.dll: '0'
+  assemblies/Xamarin.Android.Support.v7.RecyclerView.dll: '0'
+  assemblies/Xamarin.Android.Support.Vector.Drawable.dll: '0'
+  assemblies/Xamarin.Forms.Core.dll: '0'
+  assemblies/Xamarin.Forms.Platform.Android.dll: '0'
+  assemblies/Xamarin.Forms.Platform.dll: '0'
+  assemblies/Xamarin.Forms.Xaml.dll: '0'
+  assemblies/Newtonsoft.Json.dll: '0'
+  assemblies/Java.Interop.dll: '0'
+  assemblies/Mono.Android.dll: '0'
+  assemblies/mscorlib.dll: '0'
+  assemblies/System.Core.dll: '0'
+  assemblies/System.dll: '0'
+  assemblies/System.Net.Http.dll: '0'
+  assemblies/System.Xml.dll: '0'
+  assemblies/System.Xml.Linq.dll: '0'
+  assemblies/System.Runtime.Serialization.dll: '0'
+  assemblies/System.ServiceModel.Internals.dll: '0'
+  assemblies/Microsoft.CSharp.dll: '0'
+  assemblies/Mono.CSharp.dll: '0'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.3.0
+versionInfo:
+  versionCode: '8'
+  versionName: 1.1.1

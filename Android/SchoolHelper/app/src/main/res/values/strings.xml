@@ -61,4 +61,15 @@
     <string name="past_homework">Past Homework:</string>
     <string name="no_homework">No Homework!</string>
     <string name="no_downloaded_zusammenfassungen">Couldn\'t find any offline available Summarys :(</string>
+    <string name="timetableTimeDay">Time / Day</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="time">Time</string>
+    <string name="location">Location</string>
+    <string name="teacher">Teacher</string>
 </resources>

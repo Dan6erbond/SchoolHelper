@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mr_button_content_description">Butonul de proiecție</string>
+    <string name="mr_chooser_searching">Se caută dispozitive</string>
+    <string name="mr_chooser_title">Proiectați pe</string>
+    <string name="mr_controller_casting_screen">Se proiectează ecranul</string>
+    <string name="mr_controller_close_description">Închideți</string>
+    <string name="mr_controller_collapse_group">Restrângeți</string>
+    <string name="mr_controller_disconnect">Deconectați-vă</string>
+    <string name="mr_controller_expand_group">Extindeți</string>
+    <string name="mr_controller_no_info_available">Nu sunt disponibile informații</string>
+    <string name="mr_controller_no_media_selected">Niciun fișier media selectat</string>
+    <string name="mr_controller_pause">Întrerupeți</string>
+    <string name="mr_controller_play">Redați</string>
+    <string name="mr_controller_stop">Opriți proiecția</string>
+    <string name="mr_system_route_name">Sistem</string>
+    <string name="mr_user_route_category_name">Dispozitive</string>
+    <string name="abc_action_bar_home_description">Navigați la ecranul de pornire</string>
+    <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
+    <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
+    <string name="abc_action_bar_up_description">Navigați în sus</string>
+    <string name="abc_action_menu_overflow_description">Mai multe opțiuni</string>
+    <string name="abc_action_mode_done">Terminat</string>
+    <string name="abc_activity_chooser_view_see_all">Afișați-le pe toate</string>
+    <string name="abc_activitychooserview_choose_application">Alegeți o aplicație</string>
+    <string name="abc_capital_off">DEZACTIVAȚI</string>
+    <string name="abc_capital_on">ACTIVAȚI</string>
+    <string name="abc_search_hint">Căutați…</string>
+    <string name="abc_searchview_description_clear">Ștergeți interogarea</string>
+    <string name="abc_searchview_description_query">Interogare de căutare</string>
+    <string name="abc_searchview_description_search">Căutați</string>
+    <string name="abc_searchview_description_submit">Trimiteți interogarea</string>
+    <string name="abc_searchview_description_voice">Căutare vocală</string>
+    <string name="abc_shareactionprovider_share_with">Trimiteți la</string>
+    <string name="abc_shareactionprovider_share_with_application">Trimiteți la %s</string>
+    <string name="abc_toolbar_collapse_description">Restrângeți</string>
+    <string name="status_bar_notification_info_overflow">˃999</string>
+</resources>

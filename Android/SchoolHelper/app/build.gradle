@@ -6,8 +6,8 @@ android {
         applicationId "com.dan6erbond.schoolhelper"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 25
-        versionName "7.5"
+        versionCode 28
+        versionName "8.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -37,9 +37,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    compile 'com.google.firebase:firebase-core:11.8.0'
-    compile 'com.google.firebase:firebase-messaging:11.8.0'
-    compile 'com.firebase:firebase-jobdispatcher:0.5.2'
+    compile (
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.4.1'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.4.1'],
+            [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.4.1']
+    )
 }
 
 configurations {

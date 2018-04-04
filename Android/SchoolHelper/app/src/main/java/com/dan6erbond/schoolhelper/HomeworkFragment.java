@@ -1,14 +1,8 @@
 package com.dan6erbond.schoolhelper;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -29,12 +23,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -51,56 +42,19 @@ import java.util.Set;
 
 public class HomeworkFragment extends Fragment {
 
-    //Tutorial used to get FTP knowledge: http://wiki-android.blogspot.ch/2012/12/creating-android-ftp-client-ftp.html
-    private ArrayList<Homework> homeworkArray = new ArrayList<>();
-    private String homeworkFileURL = "https://api.myjson.com/bins/1h8sp7";
-
-    View view;
-
-    @SuppressLint("HandlerLeak")
-    Handler downloadHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            openHomeworkFile();
-        }
-    };
+    private View view;
+    private MainActivity mActivity;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_homework, container, false);
 
-        final Button addHomeworkButton = view.findViewById(R.id.homework_add);
+        Button addHomeworkButton = view.findViewById(R.id.homework_add);
 
-        if (isInternetWorking(getActivity())) {
-            //Download the File in a seperate Thread
-            Thread downloadFile = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        StringBuilder resultReader = new StringBuilder();
-                        URL url = new URL(homeworkFileURL);
-                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                        conn.setRequestMethod("GET");
-                        BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                        String line;
-                        while ((line = rd.readLine()) != null) {
-                            resultReader.append(line);
-                        }
-                        rd.close();
-                        final File file = new File(getActivity().getExternalFilesDir(null), "/Homework.json");
-                        FileWriter writer = new FileWriter(file);
-                        writer.append(resultReader.toString());
-                        writer.flush();
-                        writer.close();
-                        downloadHandler.sendEmptyMessage(0);
-                    } catch (Exception e) {
-                        Log.i("TAG", e.getMessage());
-                    }
-                }
-            });
-            downloadFile.start();
+        mActivity = (MainActivity)getActivity();
 
+        if(mActivity.isInternetWorking()) {
             addHomeworkButton.setOnClickListener(
                     new View.OnClickListener() {
                         @Override
@@ -137,58 +91,37 @@ public class HomeworkFragment extends Fragment {
                             dialog.show();
                         }
                     });
+            while(!mActivity.loadedFiles);
+            loadHomeworkTable();
         } else {
             Toast.makeText(getActivity(), R.string.no_internet, Toast.LENGTH_LONG).show();
             addHomeworkButton.setClickable(false);
             addHomeworkButton.setAlpha(0.5f);
-            openHomeworkFile();
+            while(!mActivity.loadedFiles);
+            loadHomeworkTable();
         }
         return view;
     }
 
     private void addHomework(String d, String s, String j) {
         Homework h = new Homework(d, s, j);
-        homeworkArray.add(h);
-        //remove duplicates
-        Set<Homework> hs = new HashSet<>(homeworkArray);
-        homeworkArray = new ArrayList<>(hs);
-        //sort array -> done after since HashSet doesn't retain order
-        Collections.sort(homeworkArray);
-        if (isInternetWorking(getActivity())) {
-            deleteOldHomework();
+        mActivity.homeworks.add(h);
+        if (mActivity.isInternetWorking())
             uploadHomework();
-        }
         addHomeworkToTable(h);
     }
 
-    private void openHomeworkFile() {
-        //Create new file variable by using desFilePath as path
-        File file = new File(getActivity().getExternalFilesDir(null), "/Homework.json");
-        //Read text from file
-        StringBuilder text = new StringBuilder();
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String line;
-            while ((line = br.readLine()) != null) {
-                text.append(line);
-                text.append('\n');
-            }
-            br.close();
+    private void organizeHomework(){
+        //remove duplicates
+        Set<Homework> hs = new HashSet<>(mActivity.homeworks);
+        mActivity.homeworks = new ArrayList<>(hs);
 
-            JSONArray homeworkJSONArray = new JSONArray(text.toString());
-            for (int i = 0; i < homeworkJSONArray.length(); i++) {
-                JSONObject homework = homeworkJSONArray.getJSONObject(i);
-                homeworkArray.add(new Homework(homework.getString("datum"), homework.getString("fach"), homework.getString("aufgabe")));
-            }
-            loadHomeworkTable();
-        } catch (Exception e) {
-            Log.i("TAG", e.getMessage());
-        }
-    }
+        //sort array -> done after since HashSet doesn't retain order
+        Collections.sort(mActivity.homeworks);
 
-    private void deleteOldHomework() {
+        //Delete homework older than 3 days
         List<Homework> toRemove = new ArrayList<>();
-        for (Homework homework : homeworkArray) {
+        for (Homework homework : mActivity.homeworks) {
             SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 
             Date date1 = new Date();
@@ -204,11 +137,11 @@ public class HomeworkFragment extends Fragment {
                 toRemove.add(homework);
             }
         }
-        homeworkArray.removeAll(toRemove);
+        mActivity.homeworks.removeAll(toRemove);
     }
 
     private void loadHomeworkTable() {
-        for (Homework h : homeworkArray) {
+        for (Homework h : mActivity.homeworks) {
             addHomeworkToTable(h);
         }
 
@@ -291,19 +224,11 @@ public class HomeworkFragment extends Fragment {
         tableLayout.addView(tableRow2);
     }
 
-    private boolean isInternetWorking(Context context) {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        if (netInfo != null && netInfo.isConnected()) {
-            return true;
-        }
-        return false;
-    }
-
     private void uploadHomework() {
+        organizeHomework();
         JSONArray jArray = new JSONArray();
         try {
-            for (Homework h : homeworkArray) {
+            for (Homework h : mActivity.homeworks) {
                 JSONObject homeworkJSON = new JSONObject();
                 homeworkJSON.put("datum", h.date);
                 homeworkJSON.put("fach", h.subject);
@@ -314,9 +239,9 @@ public class HomeworkFragment extends Fragment {
             e.printStackTrace();
         }
         final String jsonContent = jArray.toString();
-        final File file = new File(getActivity().getExternalFilesDir(null), "/Homework.json");
         try {
-            FileWriter writer = new FileWriter(file);
+            File homeworkFile = new File(getActivity().getExternalFilesDir(null), "/Homework.json");
+            FileWriter writer = new FileWriter(homeworkFile);
             writer.append(jsonContent);
             writer.flush();
             writer.close();
@@ -328,7 +253,7 @@ public class HomeworkFragment extends Fragment {
             @Override
             public void run() {
                 try{
-                    URL url = new URL(homeworkFileURL);
+                    URL url = new URL("https://api.myjson.com/bins/1h8sp7");
                     HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
                     httpCon.setDoOutput(true);
                     httpCon.setRequestMethod("PUT");
